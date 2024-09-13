@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_study/model/user.dart';
+import 'package:flutter_study/pages/settingProfilePage.dart';
 import 'package:flutter_study/pages/talkRoomPage.dart';
 
 class TopPage extends StatefulWidget {
@@ -34,9 +35,17 @@ class _TopPageState extends State<TopPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text('トップページ'),
-        ),
+        appBar: AppBar(title: Text('トップページ'), actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const SettingProfilePage()));
+            },
+            icon: const Icon(Icons.settings),
+          )
+        ]),
         body: ListView.builder(
           itemCount: userList.length,
           itemBuilder: (context, index) {
