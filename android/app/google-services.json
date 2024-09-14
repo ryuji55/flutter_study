@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "858436204945",
+    "project_id": "first-time-firebase-6dbed",
+    "storage_bucket": "first-time-firebase-6dbed.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:858436204945:android:ca56e0bfc6cac42c3f4230",
+        "android_client_info": {
+          "package_name": "com.example.flutter_study"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWvioA_yfsGfZqqtApheQ_3JXEHlX45I0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
