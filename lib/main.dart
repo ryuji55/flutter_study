@@ -1,6 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_study/fireStore/userFireStore.dart';
 import 'package:flutter_study/firebase_options.dart';
+import 'package:flutter_study/model/user.dart';
 import 'package:flutter_study/pages/topPage.dart';
 
 void main() async {
@@ -8,6 +10,7 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  await UserFirestore.createUser();
   runApp(const MyApp());
 }
 
