@@ -19,4 +19,13 @@ class UserFirestore {
       print('ユーザーの作成に失敗しました: $e');
     }
   }
+
+  static Future<void> fetchUsers() async {
+    try {
+      final users = await _usersCollection.get();
+      users.docs.forEach((user) => print(user.data()));
+    } catch (e) {
+      print('ユーザーの取得に失敗しました: $e');
+    }
+  }
 }
