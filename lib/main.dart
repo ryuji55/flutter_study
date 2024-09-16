@@ -2,15 +2,20 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_study/fireStore/userFireStore.dart';
 import 'package:flutter_study/firebase_options.dart';
+import 'package:flutter_study/firestore/roomFirestore.dart';
 import 'package:flutter_study/model/user.dart';
 import 'package:flutter_study/pages/topPage.dart';
+import 'package:flutter_study/utils/sharedPrefs.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  await UserFirestore.fetchUsers();
+  await SharedPrefs.setPrefs();
+  final String? uuid = SharedPrefs.getUuid();
+  if (uuid == null) await UserFirestore.createUser();
+
   runApp(const MyApp());
 }
 
