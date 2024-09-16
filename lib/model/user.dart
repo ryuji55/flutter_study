@@ -1,12 +1,12 @@
 class User {
   String name;
-  String uid;
+  String uuid;
   String? imageUrl;
   String lastMessage;
 
   User({
     required this.name,
-    required this.uid,
+    required this.uuid,
     this.imageUrl,
     this.lastMessage = '',
   });
